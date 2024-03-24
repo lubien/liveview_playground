@@ -7,7 +7,18 @@ defmodule LiveviewPlayground.MixProject do
       version: "0.1.0",
       elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: description(),
+      package: package(),
+      name: "LiveView Playground",
+      source_url: "https://github.com/lubien/liveview_playground",
+      docs: [
+        # The main page in the docs
+        main: "readme",
+        # logo: "path/to/logo.png",
+        extras: ["README.md", "guides/Number Counter.md", "guides/Custom Router.md"],
+        groups_for_extras: groups_for_extras()
+      ]
     ]
   end
 
@@ -24,9 +35,30 @@ defmodule LiveviewPlayground.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:jason, "~> 1.0"},
       {:phoenix, "~> 1.7.0-rc.2", override: true},
-      {:phoenix_live_view, "~> 0.18.2"}
+      {:phoenix_live_view, "~> 0.18.2"},
+      {:ex_doc, "~> 0.31", only: :dev, runtime: false}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+    ]
+  end
+
+  defp description() do
+    "The easiest way to make a LiveView REPL"
+  end
+
+  defp package do
+    [
+      # These are the default files included in the package
+      files: ~w(lib .formatter.exs mix.exs README* readme* LICENSE*
+                    license* CHANGELOG* changelog*),
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/lubien/liveview_playground"}
+    ]
+  end
+
+  defp groups_for_extras do
+    [
+      Examples: ~r/guides\/[^\/]+\.md/
     ]
   end
 end

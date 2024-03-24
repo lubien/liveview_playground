@@ -1,21 +1,31 @@
-# LiveviewPlayground
+# Your first LiveView!
 
-**TODO: Add description**
+The easiest way to have your LiveView running without boilerplate
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `liveview_playground` to your list of dependencies in `mix.exs`:
+Create a file named `main.exs`:
 
 ```elixir
-def deps do
-  [
-    {:liveview_playground, "~> 0.1.0"}
-  ]
+Mix.install([
+  {:liveview_playground, "~> 0.1.0"}
+])
+
+defmodule PageLive do
+  use LiveviewPlaygroundWeb, :live_view
+
+  def mount(_params, _session, socket) do
+    {:ok, assign(socket, :name, "World")}
+  end
+
+  def render(assigns) do
+    ~H"""
+    Hello <%= @name %>
+    """
+  end
 end
+
+LiveviewPlayground.start()
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/liveview_playground>.
-
+Then run `elixir main.exs`. Congratulations! You have LiveView running at http://localhost:4000
