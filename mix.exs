@@ -34,7 +34,7 @@ defmodule LiveviewPlayground.MixProject do
     [
       {:plug_cowboy, "~> 2.5"},
       {:jason, "~> 1.0"},
-      {:phoenix, "~> 1.7.0-rc.2", override: true},
+      {:phoenix, "~> 1.7.0"},
       {:phoenix_live_view, "~> 0.18.2"},
       {:ex_doc, "~> 0.31", only: :dev, runtime: false}
       # {:dep_from_hexpm, "~> 0.3.0"},
@@ -49,8 +49,7 @@ defmodule LiveviewPlayground.MixProject do
   defp package do
     [
       # These are the default files included in the package
-      files: ~w(lib .formatter.exs mix.exs README* readme* LICENSE*
-                    license* CHANGELOG* changelog*),
+      files: ~w(lib .formatter.exs mix.exs README.md LICENSE.md),
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/lubien/liveview_playground"}
     ]
