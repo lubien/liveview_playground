@@ -8,7 +8,7 @@ Create a file named `main.exs`:
 
 ```elixir
 Mix.install([
-  {:liveview_playground, "~> 0.1.0"}
+  {:liveview_playground, "~> 0.1.1"}
 ])
 
 defmodule PageLive do
