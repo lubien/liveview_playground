@@ -4,7 +4,7 @@ Soon enough you will need more than one route. You can specify a `router` option
 
 ```
 Mix.install([
-  {:liveview_playground, path: "~> 0.1.0"}
+  {:liveview_playground, "~> 0.1.1"}
 ])
 
 defmodule CustomRouter do

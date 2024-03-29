@@ -1,4 +1,5 @@
 defmodule LiveviewPlayground.ProxyRouter do
+  require LiveviewPlayground.Router
   use Agent
   use Phoenix.Router
 

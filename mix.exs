@@ -4,7 +4,7 @@ defmodule LiveviewPlayground.MixProject do
   def project do
     [
       app: :liveview_playground,
-      version: "0.1.0",
+      version: "0.1.2",
       elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -35,7 +35,7 @@ defmodule LiveviewPlayground.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:jason, "~> 1.0"},
       {:phoenix, "~> 1.7.0"},
-      {:phoenix_live_view, "~> 0.18.2"},
+      {:phoenix_live_view, "~> 0.20.14"},
       {:ex_doc, "~> 0.31", only: :dev, runtime: false}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
