@@ -1,14 +1,13 @@
 defmodule LiveviewPlayground.Router do
-  use Phoenix.Router
-  import Phoenix.LiveView.Router
+  use LiveviewPlaygroundWeb, :router
 
   pipeline :browser do
-    plug(:accepts, ["html"])
+    plug :accepts, ["html"]
   end
 
   scope "/" do
     pipe_through(:browser)
 
-    live("/", PageLive, :index)
+    live "/", PageLive, :index
   end
 end
