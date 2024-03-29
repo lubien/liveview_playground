@@ -10,7 +10,7 @@ defmodule CustomRouter do
   end
 
   scope "/" do
-    pipe_through(:browser)
+    pipe_through :browser
 
     live "/", PageLive, :index
     live "/other", OtherPageLive, :about
@@ -23,9 +23,7 @@ defmodule PageLive do
   def render(assigns) do
     ~H"""
     <h1>PageLive</h1>
-    <ul>
-      <.link navigate={~p"/other"}>Go to other</.link>
-    </ul>
+    <.link navigate={~p"/other"}>Go to other</.link>
     """
   end
 end
