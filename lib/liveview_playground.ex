@@ -16,13 +16,12 @@ defmodule LiveviewPlayground do
     router = Keyword.get(opts, :router, LiveviewPlayground.Router)
     endpoint = Keyword.get(opts, :endpoint, LiveviewPlayground.Endpoint)
 
-    LiveviewPlayground.ProxyRouter.set_router(router)
-
     Application.put_env(:liveview_playground, endpoint,
       http: [ip: {127, 0, 0, 1}, port: 4000],
       server: true,
       live_view: [signing_salt: "aaaaaaaa"],
-      secret_key_base: String.duplicate("a", 64)
+      secret_key_base: String.duplicate("a", 64),
+      router: router
     )
 
     Application.put_env(:liveview_playground, :router, router)
