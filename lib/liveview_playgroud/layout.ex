@@ -2,7 +2,14 @@ defmodule LiveviewPlayground.Layout do
   use LiveviewPlaygroundWeb, :live_view
 
   def render("live.html", assigns) do
+    assigns =
+      assign_new(assigns, :scripts, fn ->
+        Application.fetch_env!(:liveview_playground, :scripts) |> dbg
+      end)
+
     ~H"""
+    <script :for={script <- @scripts} src={script}>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/phoenix@1.7.0-rc.2/priv/static/phoenix.min.js">
     </script>
     <script

@@ -15,6 +15,7 @@ defmodule LiveviewPlayground do
   def start(opts \\ []) do
     router = Keyword.get(opts, :router, LiveviewPlayground.Router)
     endpoint = Keyword.get(opts, :endpoint, LiveviewPlayground.Endpoint)
+    scripts = Keyword.get(opts, :scripts, [])
 
     Application.put_env(:liveview_playground, endpoint,
       http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -25,6 +26,7 @@ defmodule LiveviewPlayground do
     )
 
     Application.put_env(:liveview_playground, :router, router)
+    Application.put_env(:liveview_playground, :scripts, scripts)
 
     {:ok, _} = Supervisor.start_link([endpoint], strategy: :one_for_one)
     Process.sleep(:infinity)

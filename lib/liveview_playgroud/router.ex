@@ -6,8 +6,7 @@ defmodule LiveviewPlayground.Router do
   end
 
   scope "/" do
-    pipe_through(:browser)
-
+    pipe_through :browser
     live "/", PageLive, :index
   end
 end
