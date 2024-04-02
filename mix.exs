@@ -17,7 +17,7 @@ defmodule LiveviewPlayground.MixProject do
         # The main page in the docs
         main: "readme",
         # logo: "path/to/logo.png",
-        extras: ["README.md", "guides/Number Counter.md", "guides/Custom Router.md"],
+        extras: ["README.md", "guides/Number Counter.md", "guides/Custom Router.md", "guides/Tailwind.md"],
         groups_for_extras: groups_for_extras()
       ]
     ]
