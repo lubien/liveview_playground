@@ -4,12 +4,15 @@ defmodule LiveviewPlayground do
   """
 
   @doc """
-  Hello world.
+  Starts liveview playground
 
-  ## Examples
+  All options are optional. They are:
 
-      iex> LiveviewPlayground.hello()
-      :world
+    * `:router` - the Phoenix.Router module
+
+    * `:endpoint` - the Phoenix.Endpoint module
+
+    * `:script` - list of binaries that will be included as scripts on the layout <head>
 
   """
   def start(opts \\ []) do
@@ -31,8 +34,4 @@ defmodule LiveviewPlayground do
     {:ok, _} = Supervisor.start_link([endpoint], strategy: :one_for_one)
     Process.sleep(:infinity)
   end
-
-  # def make_endpoint(router) do
-  #   LiveviewPlayground.Endpoint
-  # end
 end
