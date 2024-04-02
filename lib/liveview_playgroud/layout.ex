@@ -4,7 +4,7 @@ defmodule LiveviewPlayground.Layout do
   def render("live.html", assigns) do
     assigns =
       assign_new(assigns, :scripts, fn ->
-        Application.fetch_env!(:liveview_playground, :scripts) |> dbg
+        Application.fetch_env!(:liveview_playground, :scripts)
       end)
 
     ~H"""

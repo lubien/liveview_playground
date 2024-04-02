@@ -4,7 +4,7 @@ defmodule LiveviewPlayground.MixProject do
   def project do
     [
       app: :liveview_playground,
-      version: "0.1.4",
+      version: "0.1.6",
       elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -17,7 +17,12 @@ defmodule LiveviewPlayground.MixProject do
         # The main page in the docs
         main: "readme",
         # logo: "path/to/logo.png",
-        extras: ["README.md", "guides/Number Counter.md", "guides/Custom Router.md", "guides/Tailwind.md"],
+        extras: [
+          "README.md",
+          "guides/Number Counter.md",
+          "guides/Custom Router.md",
+          "guides/Tailwind.md"
+        ],
         groups_for_extras: groups_for_extras()
       ]
     ]

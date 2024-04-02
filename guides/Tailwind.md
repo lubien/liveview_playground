@@ -4,7 +4,7 @@ This is an example on how to pass the `tailwind` cdn to be inserted as a `<head>
 
 ```
 Mix.install([
-  {:liveview_playground, "~> 0.1.1"}
+  {:liveview_playground, "~> 0.1.6"}
 ])
 
 defmodule PageLive do

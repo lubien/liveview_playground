@@ -4,7 +4,7 @@ Probably the most common example LiveView out there is the counter:
 
 ```
 Mix.install([
-  {:liveview_playground, "~> 0.1.1"}
+  {:liveview_playground, "~> 0.1.6"}
 ])
 
 defmodule PageLive do
