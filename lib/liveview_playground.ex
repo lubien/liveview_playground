@@ -19,9 +19,11 @@ defmodule LiveviewPlayground do
     router = Keyword.get(opts, :router, LiveviewPlayground.Router)
     endpoint = Keyword.get(opts, :endpoint, LiveviewPlayground.Endpoint)
     scripts = Keyword.get(opts, :scripts, [])
+    ip = Keyword.get(opts, :ip, {127, 0, 0, 1})
+    port = Keyword.get(opts, :port, 4000)
 
     Application.put_env(:liveview_playground, endpoint,
-      http: [ip: {127, 0, 0, 1}, port: 4000],
+      http: [ip: ip, port: port],
       server: true,
       live_view: [signing_salt: "aaaaaaaa"],
       secret_key_base: String.duplicate("a", 64),
